@@ -57,7 +57,7 @@ void play_game() {
         Cell* c = game.get_cell(row, col);
         
         if (action == 'S') {
-            if (c->is_hidden == false) {
+            if (c->is_hidden == false || c->is_flagged) {
                 cout << "Invalid move" << endl;
             }
             else {
