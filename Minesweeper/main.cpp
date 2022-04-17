@@ -125,6 +125,13 @@ int main(int argc, const char * argv[]) {
     
     int input;
     cin >> input;
+    while (cin.fail() || (input != 1
+            && input != 2 && input != 3)) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        cout << "Please enter a valid input (1, 2, or 3): ";
+        cin >> input;
+    }
     if (input == 1) {
         start_grid_tests();
     }
