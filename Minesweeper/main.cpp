@@ -40,18 +40,13 @@ void play_game() {
         string action_in;
         cout << "Show (S) or Flag (F) or Unflag (U): ";
         cin >> action_in;
-        while (action_in.size() > 1) {
-            cout << "Please enter one character ('S' or 'F' or 'U'): ";
+        while (action_in.size() > 1 || (toupper(action_in[0]) != 'S'
+                && toupper(action_in[0]) != 'F' && toupper(action_in[0]) != 'U')) {
+            cout << "Please enter a valid input ('S' or 'F' or 'U'): ";
             cin >> action_in;
         }
         action = action_in[0];
         action = toupper(action);
-        while (action != 'S' && action != 'F' && action != 'U') {
-            cout << "Please enter a valid input ('S' or 'F' or 'U')" << endl;
-            cout << "Show (S) or Flag (F) or Unflag (U): ";
-            cin >> action;
-            action = toupper(action);
-        }
         string action_s;
         if (action == 'S') {
             action_s = "Show";
