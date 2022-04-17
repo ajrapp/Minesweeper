@@ -37,8 +37,14 @@ void play_game() {
     while (play) {
         game.print_board(cout);
         char action;
+        string action_in;
         cout << "Show (S) or Flag (F) or Unflag (U): ";
-        cin >> action;
+        cin >> action_in;
+        while (action_in.size() > 1) {
+            cout << "Please enter one character ('S' or 'F' or 'U'): ";
+            cin >> action_in;
+        }
+        action = action_in[0];
         action = toupper(action);
         while (action != 'S' && action != 'F' && action != 'U') {
             cout << "Please enter a valid input ('S' or 'F' or 'U')" << endl;
@@ -46,6 +52,17 @@ void play_game() {
             cin >> action;
             action = toupper(action);
         }
+        string action_s;
+        if (action == 'S') {
+            action_s = "Show";
+        }
+        else if (action == 'F') {
+            action_s = "Flag";
+        }
+        else if (action == 'U') {
+            action_s = "Unflag";
+        }
+        cout << "Action: " << action_s << endl;
         
         int row, col;
         cout << "select cell:" << endl;
