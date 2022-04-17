@@ -40,9 +40,9 @@ void play_game() {
         cout << "Show (S) or Flag (F) or Unflag (U): ";
         cin >> action;
         action = toupper(action);
-        while (action != 'S' && action != 'F') {
+        while (action != 'S' && action != 'F' && action != 'U') {
             cout << "Please enter a valid input ('S' or 'F' or 'U')" << endl;
-            cout << "Show (S) or Flag (F) or Unflag (U): "; //TODO: add unflag
+            cout << "Show (S) or Flag (F) or Unflag (U): ";
             cin >> action;
             action = toupper(action);
         }
