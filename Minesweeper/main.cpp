@@ -51,8 +51,20 @@ void play_game() {
         cout << "select cell:" << endl;
         cout << "row: ";
         cin >> row;
+        while (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Please enter a valid number: ";
+            cin >> row;
+        }
         cout << "col: ";
         cin >> col;
+        while (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Please enter a valid number: ";
+            cin >> col;
+        }
         cout << endl;
         Cell* c = game.get_cell(row, col);
         
